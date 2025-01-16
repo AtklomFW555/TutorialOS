@@ -53,7 +53,6 @@ hd.img : out/boot.bin out/loader.bin out/kernel.bin $(APPS)
 	ftcopy hd.img -srcpath out/loader.bin -to -dstpath /loader.bin 
 	ftcopy hd.img -srcpath out/kernel.bin -to -dstpath /kernel.bin
 	ftcopy hd.img -srcpath out/test_c.bin -to -dstpath /test_c.bin
-	ftcopy hd.img -srcpath out/test2.bin -to -dstpath /test2.bin
 	ftcopy hd.img -srcpath out/shell.bin -to -dstpath /shell.bin
 	ftcopy hd.img -srcpath out/c4.bin -to -dstpath /c4.bin
 	ftcopy hd.img -srcpath apps/test_c.c -to -dstpath /test_c.c
