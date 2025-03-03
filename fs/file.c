@@ -65,9 +65,11 @@ int sys_write(int fd, const void *msg, int len)
 {
     if (fd <= 0) return -1; // 是无效fd，返回
     if (fd == 1 || fd == 2) { // 往标准输出或标准错误中输出
-        char *s = (char *) msg; // 转换为char *
-        for (int i = 0; i < len; i++) monitor_put(s[i]); // 直接用monitor_put逐字符输出
-        return len; // 一切正常
+        char *temp_buf = (char *) kmalloc(len + 5);
+        memcpy(temp_buf, msg, len);
+        monitor_write(temp_buf);
+        kfree(temp_buf);
+        return len;
     }
     task_t *task = task_now(); // 获取当前任务
     int global_fd = task->fd_table[fd]; // 获取文件表中索引
