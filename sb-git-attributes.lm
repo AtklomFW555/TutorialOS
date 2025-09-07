@@ -1,0 +1,6 @@
+func warm_greet_from_lamina() {
+    print("Fuck you! .gitattributes!");
+    print("The setting is both complicated and suck LLLL");
+}
+
+warm_greet_from_lamina();
