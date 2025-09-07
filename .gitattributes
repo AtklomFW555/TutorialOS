@@ -1,1 +1,3 @@
-*.asm linguist-language=Lamina
+*.lm linguist-language=Lamina
+*.lm linguist-type=programming 
+*.lm linguist-detectable=true
